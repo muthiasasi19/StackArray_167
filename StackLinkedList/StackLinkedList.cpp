@@ -48,5 +48,19 @@ struct Node {
             delete temp;        // Hapus elemen
         }
 
+        // Fungsi untuk menampilkan elemen-elemen dalam stack
+        void display() {
+            if (isEmpty()) {
+                cout << "Stack kosong." << endl;
+                return;
+            }
+            cout << "Isi stack: ";
+            Node* current = top;
+            while (current != NULL) {
+                cout << current->data << " ";
+                current = current->next;
+            }
+            cout << endl;
+        }
 
-};
+    };
