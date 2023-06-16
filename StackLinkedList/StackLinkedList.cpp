@@ -36,7 +36,17 @@ struct Node {
             cout << "Elemen " << element << " ditambahkan ke stack." << endl;
         }
 
+        // Fungsi untuk mengeluarkan/menghapus elemen/data dari stack
+        void pop() {
+            if (isEmpty()) {
+                cout << "Stack kosong. Tidak ada elemen yang dihapus." << endl;
+                return;
+            }
+            Node* temp = top;   // menyimpan alamat elemen teratas
+            top = top->next;    // Mengubah top menjadi elemen berikutnya
+            cout << "Elemen " << temp->data << " dihapus dari stack." << endl;
+            delete temp;        // Hapus elemen
+        }
+
 
 };
-
-
