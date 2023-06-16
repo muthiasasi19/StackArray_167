@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
+using namespace std;
 
 class StackArray {
 private:
@@ -9,52 +9,53 @@ private:
 	int top;
 
 public:
-	int stackArray() {
+	//constructor
+	StackArray() {
 		top = -1;
 	}
 
 	void push() {
-		cout << "\nEnter an Element:";
+		cout << "\nEnter an Element: ";
 		int element;
 		cin >> element;
 
-		if (top == 4) {
+		if (top == 4) {// step 1
 			cout << "Number of data exceeds the limit." << endl;
 			return;
 		}
+
 		top++;
-		stack_array[top] = element; // step 3
+		stack_array[top] = element; //step 3
 		cout << endl;
-		cout << element << "Ditambahkan(pushed)" << endl;
-	} 
-
-	void pop() {
-		if (empty()) { // step 1
-			cout << "\nStack is empty. cannot pop." << endl; // 1.a
-			return; // 1.b
-		}
-
-		cout << "\n Th epop element is : " << stack_array[top] << endl; // step 2
-		top--; // step 3 decrement
+		cout << element << " ditambahkan(pushed)" << endl;
 
 	}
 
-	// method for check if data is empty
+	void pop() {
+		if (empty()) {//step 1
+			cout << "\nStack is empty. Cannot pop." << endl;//1.a
+			return;//1.b
+		}
+
+		cout << "\nThe popped element is:" << stack_array[top] << endl; //step 2
+		top--; //step 3 decrement
+	}
+
+	//method for check if data is empty
 	bool empty() {
 		return (top == -1);
 	}
-	
+
 	void display() {
 		if (empty()) {
 			cout << "\nStack is empty." << endl;
 		}
 		else {
-			for (int tmp = top; tmp >= 0; tmp++) {
+			for (int tmp = 0; tmp <= top; tmp++) {
 				cout << stack_array[tmp] << endl;
 			}
 		}
 	}
-
 };
 
 int main() {
@@ -69,7 +70,6 @@ int main() {
 		cout << "4. Exit\n";
 		cout << "\nEnter your choice: ";
 		cin >> ch;
-
 		switch (ch) {
 		case '1': {
 			s.push();
@@ -92,5 +92,4 @@ int main() {
 			break;
 		}
 	}
-
 }
