@@ -11,7 +11,7 @@ struct Node {
 // Kelas Stack
 class StackLinkedList {
 private:
-    Node* top; // Pointer ke elemen teratas stack
+    Node* top; // Pointer ke elemen paling atas pada stack
 
 public:
     // Constructor
@@ -24,7 +24,7 @@ public:
         return (top == NULL);
     }
 
-    // Fungsi untuk menambahkan elemen ke stack
+    // Fungsi untuk menambahkan elemen/data ke stack
     void push() {
         int element;
         cout << "Masukkan nilai elemen: ";
@@ -66,7 +66,7 @@ public:
 };
 
 int main() {
-    StackLinkedList  stack;
+    StackLinkedList stack;
     int choice;
 
     while (true) {
